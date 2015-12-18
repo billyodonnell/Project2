@@ -1,0 +1,28 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
+<%include ../partials/header%>
+
+<form action="/parties/save/">
+    <label for="title">Party Title</label> <input type="text" id="title" name="title" /><br />
+    <label for="num_guests">Number of Guests</label> <input type="number" id="num_guests" name="num_guests" /><br />
+    <label for="party_start">Party Start (EX: 8)</label> <input type="number" id="party_start" name="party_start" /><br />
+    <label for="party_end">Party End (EX: 12)</label> <input type="number" id="party_end" name="party_end" /><br />
+    <label for="host">Host</label>
+    <select id="host" name="host" class="form_control">
+        <% users_results.forEach(function(entry) { %>
+        <% var host = entry.firstname + " " + entry.lastname + ", " + entry.email; %>
+        <option value="<%= entry.user_id %>"><%= host %></option>
+        <% }); %>
+    </select>
+    <br />
+    <label for="location">Location</label>
+    <select id="location" name="location" class="form_control">
+        <% location_results.forEach(function(entry) { %>
+        <% var location = entry.zip + " " + entry.city + ", " + entry.street; %>
+        <option value="<%= entry.location_id %>"><%= location %></option>
+        <% }); %>
+    </select>&nbsp;<a href="/location/create">Add Location</a>
+    <br />
+    <input type="submit" />
+</form>
+
+<%include ../partials/footer%>

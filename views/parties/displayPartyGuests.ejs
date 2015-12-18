@@ -1,0 +1,14 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
+<form action="/parties/party_guests/">
+    <h1>Choose A Party and view its Guests!</h1>
+    <br />
+    <select id="party_id" name="party_id" class="form_control">
+        <% party_results.forEach(function(entry) { %>
+        <% var party = entry.title + " " + entry.num_guests + " guests "; %>
+        <option value="<%= entry.party_id %>"><%= party %></option>
+        <br />
+        <% }); %>
+    </select>
+    <br />
+    <input type="submit" />
+</form>

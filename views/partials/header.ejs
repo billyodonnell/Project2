@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CS355 Project 2</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+</head>
+<body>
+
+<% if(typeof firstname !== "undefined") { %>
+    <div style="float:right;padding-right:20px;">Welcome, <%= firstname %>
+        <br /> <a href="/logout">Logout</a></div>
+
+<% } %>

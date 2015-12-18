@@ -1,0 +1,27 @@
+
+<%include partials/header%>
+<link rel="stylesheet" href="./stylesheets/style.css" />
+<h1><center>Party Database Search</center></h1>
+<% if(typeof firstname !== "undefined") { %>
+<div style="padding-right:120px;"><h1><center><a href="parties/all">View All Current Parties</a></center></h1></div>
+<div style="padding-right:120px;"><h1><center><a href="parties/create">Create A New Party!</a></center></h1></div>
+<div style="padding-right:120px;"><h1><center><a href="parties/party">View A Current Party and Its Guests!</a></center></h1></div>
+<div style="padding-right:120px;"><h1><center><a href="users/all">View All Of Our Current Users!</a></center></h1></div>
+<div style="padding-right:120px;"><h1><center><a href="parties/total">How Many Parties And Users Do We Have?</a></center></h1></div>
+<div style="padding-right:120px;"><h1><center><a href="aboutus.html">About Us!</a></center></h1></div>
+<% } %>
+
+<% if(typeof firstname == "undefined") { %>
+<h1><center><a href="aboutus.html">About Us!</a></center></h1>
+<div style="float:left;padding-right:20px;"><h1>Login Here!</h1>
+    <h1><a href="/login">Login</a></h1>
+    <h1><a href="/signup">Create an Account</a></h1>
+    <br />
+    <br />
+</div>
+<% } %>
+<br />
+
+
+
+<%include partials/footer%>

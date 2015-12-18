@@ -1,0 +1,19 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
+<div>
+    <% if(total_results.length > 0) { %>
+
+    <h1><a><center>Total Number of Parties</center></a></h1>
+    <h1><center><%=total_results[0].TotalParties%></center></h1>
+    <h1><a><center>Total Number of Guests Attending Parties</center></a></h1>
+    <h1><center><%= total_results[0].TotalGuests%></center></h1>
+
+    <br/>
+    <% } else { %>
+    There are no parties or users currently in the database!
+    <% } %>
+
+
+    <h1><a><center>Average Number of Guests Per Party</center></a></h1>
+    <h1><center><%= avg_results[0]['TotalGuests / TotalParties '] %></center></h1>
+
+</div>

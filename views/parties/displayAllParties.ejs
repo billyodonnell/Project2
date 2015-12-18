@@ -1,0 +1,20 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
+<div>
+    <% if(rs.length > 0) { %>
+    <table border="1">
+        <tr><th>Title</th><th>Number of Guests</th></tr>
+        <% for (var i=0; rs.length > i; i++) { %>
+        <tr>
+            <td><a href="/parties/?party_id=<%= rs[i].party_id %>"> <%= rs[i].title %></a></td>
+            <td><center><%= rs[i].num_guests %></center></td>
+        </tr>
+        <% } %>
+    </table>
+    <% } else { %>
+    No parties are currently available!
+    <% } %>
+</div>
+
+<div style="margin-top:10px;">
+    <h1><a href="/parties/create">Create A New Party!</a></h1>
+</div>

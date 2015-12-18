@@ -1,0 +1,20 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
+<% if(rs.length > 0) { %>
+<h1>Party Title</h1>
+Title: <%= rs[0].title %>
+<br />
+
+<h1>Party Info</h1>
+<table border="1">
+    <tr><th>Number of Guests</th><th>Party Start</th><th>Party End</th><th>Host</th></tr>
+    <td><center><%= rs[0].num_guests %></center></td><td><%= rs[0].party_start %>:00</td><td><%= rs[0].party_end %>:00</td>
+   <% if(userResults.length > 0) { %>
+    <% userResults.forEach(function(entry) { %>
+    <td><a href="/users/?user_id=<%= entry.user_id %>"><%= entry.firstname %>&nbsp;<%= entry.lastname %> </a></td>
+    <%}); // end forEach %>
+    <% } %>
+</table>
+
+<% } else { %>
+No party matched this party ID! Sorry! <%= party_id %>.
+<% } %>
